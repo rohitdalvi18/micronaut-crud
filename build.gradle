@@ -6,7 +6,7 @@ plugins {
     id("maven-publish")
 }
 
-version = "0.1"
+version = "0.1.2"
 group = "com.piyal"
 
 repositories {
@@ -72,21 +72,21 @@ micronaut {
 tasks.named("dockerfileNative") {
     jdkVersion = "21"
 }
-
-publishing {
-    repositories {
-        maven {
-            name = "GitHubPackages"
-            uri("https://maven.pkg.github.com/rohitdalvi18/devops-micronaut-crud")            credentials {
-                username = System.getenv("GITHUB_USERNAME") ?: ""
-                password = System.getenv("GITHUB_TOKEN") ?: ""
-            }
-        }
-    }
-    publications {
-        gpr(MavenPublication) {
-            from(components.java)
-        }
-    }
-}
+//
+//publishing {
+//    repositories {
+//        maven {
+//            name = "GitHubPackages"
+//            uri("https://maven.pkg.github.com/rohitdalvi18/devops-micronaut-crud")            credentials {
+//                username = System.getenv("GITHUB_USERNAME") ?: ""
+//                password = System.getenv("GITHUB_TOKEN") ?: ""
+//            }
+//        }
+//    }
+//    publications {
+//        gpr(MavenPublication) {
+//            from(components.java)
+//        }
+//    }
+//}
 
